@@ -7,14 +7,10 @@ const burger = require("../models/burger.js");
 
 // Routes //
 router.get("/", (request, response) => {
-    burger.selectAll((results) => {
-      const hbsObject = {
-        burgers: results,
-      };
-      console.log(hbsObject);
-      response.render("index", hbsObject);
-    });
+  burger.selectAll(results => {
+    response.render("index", { burgers: results });
   });
+});
 
   router.post("/api/burgers", (request, response) => {
     burger.insertOne({ burger_name: request.body.burger_name }, results => {
