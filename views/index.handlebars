@@ -2,33 +2,63 @@
 
 {{!-- HEADER --}}
     <div class="jumbotron text-center">
-    <h1 class="display-4">EAT-DA-BURGER</h1>
-    <p>CREATE YOU'RE BURGER BUCKET LIST!</p>
-    <hr>
-</div>
-
-{{!-- Burger GIF --}}
-<div class="container">
-    <div class="text-center">
-        <img src="/assets/img/Burger.gif" width="300" height="300" alt="Burger Boucning">
-    </div>
+        <img src="/assets/img/Burger.gif" width="150" height="150" alt="Burger Boucning" align="left">
+        <img src="/assets/img/Burger.gif" class="" width="150" height="150" alt="Burger Boucning" align="right">
+    <h1 class="display-1">EAT-DA-BURGER</h1>
+    <h3 class="header">CREATE YOU'RE BURGER BUCKET LIST!</h3>
 </div>
     
 {{!-- Adding Burger Form --}}
    <div class="container">
         <div class="row">
-            <div class="text-center">
-                <label>ADD A BURGER TO YOU'RE BURGER BUCKET LIST HERE</label>
-                <form id="create-form" class="text-center">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="ADD A BURGER HERE">
-                        <button class="btn bg-primary">ADD TO BUCKET LIST!</button>
-                    </div>
-                </form>
+            <div class="col-sm-4 p-3 ">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header text-center color">ADD A BURGER TO BUCKET LIST BELOW</div>
+                        <form id="create-form" class="text-center p-3">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="newBurger" placeholder="ADD A BURGER HERE" name="burger_name">
+                        </div>
+                            <button class="btn btn-secondary" type="submit">ADD TO BUCKET LIST!</button>
+                        </form>
+                </div>
             </div>
+            
+            {{!-- Burger Bucket List --}}
+            <div class="col-sm-4 p-3">
+              <div class="card border-secondary mb-3">
+                    <div class="card-header text-center color">BURGER BUCKET LIST</div>
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#unless devoured}}
+
+                            <li class="list-group-item">
+                                {{burger_name}} <button data-id="{{id}}" class="btn btn-secondary devour float-end">Devour Me!</button>
+                            </li>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                </div>
+            </div>
+           {{!-- Devoured List --}}          
+           <div class="col-sm-4 p-3">
+              <div class="card border-secondary mb-3">
+                    <div class="card-header text-center color">BURGERS DEVOURED</div>
+                        <ul class="list-group">
+                            {{#each burgers}}
+                            {{#if devoured}}
+
+                            <li class="list-group-item">
+                                {{burger_name}}
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                </div>
+           </div>
+
         </div>
     </div>
 
-    <script src="/assets/js/script.js"></script>
+<script src="/assets/js/script.js"></script>
 
 </body>
