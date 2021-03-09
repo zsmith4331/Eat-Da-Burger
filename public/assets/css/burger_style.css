@@ -1,0 +1,24 @@
+body {
+    background-image: url("../img/burgerbackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.jumbotron{
+    background-color: #f1efe0;
+    padding: 6px;
+}
+
+.row{
+    margin-top: 15%;
+}
+
+.color{
+    background-color: #cf8505; 
+}
+
+.card-header {
+    font-size: large;
+}
+
