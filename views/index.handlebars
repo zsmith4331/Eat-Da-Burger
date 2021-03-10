@@ -16,7 +16,7 @@
                     <div class="card-header text-center color">ADD A BURGER TO BUCKET LIST BELOW</div>
                         <form id="create-form" class="text-center p-3">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="newBurger" placeholder="ADD A BURGER HERE" name="burger_name">
+                            <input type="text" class="form-control" id="newBurger" placeholder="ADD A BURGER HERE..." name="burger_name">
                         </div>
                             <button class="btn btn-secondary" type="submit">ADD TO BUCKET LIST!</button>
                         </form>
@@ -47,7 +47,7 @@
                             {{#each burgers}}
                             {{#if devoured}}
 
-                            <li class="list-group-item">
+                            <li class="list-group-item text-center">
                                 {{burger_name}}
                             </li>
                             {{/if}}
